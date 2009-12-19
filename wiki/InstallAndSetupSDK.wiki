@@ -18,11 +18,11 @@ This way you can use even Beta Eclipse versions without comprimising compatibili
 
 On SVN you will find 3 Eclipse project under the subproject "edc_file_editor_plugin".
 
-* The project "org.xtext.enlightenment.edje" contains the grammar 'Edje.xtext" and runtime setup of the EDC language.
+- The project "org.xtext.enlightenment.edje" contains the grammar 'Edje.xtext" and runtime setup of the EDC language.
 
-* The project "org.xtext.enlightenment.edje.ui" contains the generated User Interface elements like editor, outline view and code completion.
+- The project "org.xtext.enlightenment.edje.ui" contains the generated User Interface elements like editor, outline view and code completion.
 
-* The project "org.xtext.enlightenment.edje.generator" contains the code generator.
+- The project "org.xtext.enlightenment.edje.generator" contains the code generator.
 
 
 Currently the only file which has been modified is the "edje.xtext" file. This file contains the grammar which describes the source code model.
