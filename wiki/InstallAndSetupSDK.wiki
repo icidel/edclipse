@@ -3,11 +3,11 @@
 
 = Introduction =
 
-The Edclipse plugin is generated with the XText library. So if you want to contribute to this project you will have to follow the steps shown below in order to install the appropriate Eclipse and setup the workspace.
+The Edclipse plugin is generated with the XText library. So if you want to contribute to this project you will have to follow the steps shown below in order to install the appropriate Eclipse distribution and setup the workspace.
 
 = What do I need ? =
 
-The simpler way is to download the "Eclipse 3.5.1 (Galileo) + TMF Xtext 0.7.2" from http://xtext.itemis.com/xtext/language=en/23947/downloads .
+The easy way is to download the "Eclipse 3.5.1 (Galileo) + TMF Xtext 0.7.2" from http://xtext.itemis.com/xtext/language=en/23947/downloads .
 
 Then just create a workspace with your this Eclipse distribution and import the Edclipse projects from SVN with the "SVN explorer" perspective.
 
