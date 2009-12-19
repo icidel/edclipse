@@ -1,0 +1,77 @@
+collections {
+    group {
+        name: "main";
+        min: 200 100;
+        parts {
+            part {
+                name: "bg";
+                type: RECT;
+                description {
+                    rel1 {
+                        relative: 0.0 0.0;
+                        offset: 0 0;
+                    }
+                    rel2 {
+                        relative: 1.0 1.0;
+                        offset: -1 -1;
+                    }
+                    color: 255 255 255 255;
+                }
+            }
+            part {
+                name: "button";
+                type: RECT;
+                description {
+                    rel1 {
+                        relative: .4 .4;
+                        offset: 0 0;
+                    }
+                    rel2 {
+                        relative: .6 .6;
+                        offset: 0 0;
+                    }
+                    color: 0 0 0 255;
+                }
+            }
+        }
+        programs {
+            program {
+                name: "down";
+                signal: "mouse,down,*";
+                source: "button";
+                action: SIGNAL_EMIT "foo" "bar";
+            }
+            program {
+                name: "group_load";
+                signal: "load";
+                source: "";
+                lua_script {
+                    test();
+                }
+            }
+        }
+        lua_script {
+            function init(ed)
+            print 'init done'
+            end
+
+            function load()
+            print 'load done'
+            
+            end
+
+            function test()
+            print 'test OK !!!'
+            end
+
+            function message(ed, typ, id, ...)
+                local custom
+                print 'custom state received !!'
+                custom = ed.shadow:custom_state ("default", 0.0)
+                custom.rel1 = {0.3, 0.3}
+                custom.rel2 = {0.6, 0.6}
+                ed.shadow.state = {'custom', 0.0}
+            end
+        }
+    }
+}

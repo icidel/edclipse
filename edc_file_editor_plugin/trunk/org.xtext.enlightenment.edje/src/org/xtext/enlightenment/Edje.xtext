@@ -1,0 +1,77 @@
+grammar org.xtext.enlightenment.Edje with org.eclipse.xtext.common.Terminals
+
+generate edje "http://www.xtext.org/enlightenment/Edje"
+
+Model :
+	(includes+=Include)*
+	(collections+=Collections)*;
+	
+Include :
+    '#include';
+
+Define :
+    '#define';
+    
+LUA_Script :
+	'lua_script {'
+		(content=STRING)
+	'}';
+
+Collections :
+    'collections {'
+    	(groups+=Group)*
+    '}';
+    
+Group :
+    'group {'
+    	('name:' name=STRING ';')?
+	    ('min:' (minx=INT miny=INT) ';')?
+	    ('parts {' 
+	    	(part+=Part)*
+	   	'}')*
+	    ('programs {' 
+	    	(program+=Program)*
+	   	'}')*
+	   	(lua_script=LUA_Script)?
+    '}';
+    
+Part :
+	'part {'
+    	('name:' name=STRING ';')?
+	    ('min:' (minx=INT miny=INT) ';')?
+	    ('type:' type=ID ';')?
+	    (descriptions+=Description)*
+	'}';
+
+Description :
+	'description {'
+		'rel1 {'
+			(coordinates=Coordinates)
+		'}'
+		'rel2 {'
+			(coordinates=Coordinates)
+		'}'
+		('color:' (red=INT green=INT blue=INT alpha=INT) ';')?
+	'}';
+
+Coordinates :
+	('absolute:' (x=INT y=INT width=INT height=INT) ';')?
+	('relative:' (x=INT y=INT) ';')?
+	('offset:' (x=INT y=INT) ';')?;
+
+Programs :
+	'programs {'
+		(program+=Program)*
+	'}';
+
+Program :
+	'program {'
+	    ('name:' name=STRING ';')
+	    ('signal:' signal=STRING ';')
+	    ('source:' source=STRING ';')
+	    ('action:' action=Action)?
+	    (lua_script=LUA_Script)?
+	'}';
+
+Action :
+	name=ID (params+=STRING)* ';';

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.enlightenment.edje/src-gen"
+    editDirectory="/org.xtext.enlightenment.edje.edit/src" editorDirectory="/org.xtext.enlightenment.edje.editor/src"
+    modelPluginID="org.xtext.enlightenment.edje" forceOverwrite="true" modelName="Edje"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.enlightenment.edje.edit"
+    editorPluginID="org.xtext.enlightenment.edje.editor">
+  <genPackages prefix="Edje" basePackage="org.xtext.enlightenment" disposableProviderFactory="true"
+      ecorePackage="Edje.ecore#/">
+    <genClasses ecoreClass="Edje.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Model/includes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edje.ecore#//Model/collections"/>
+    </genClasses>
+    <genClasses ecoreClass="Edje.ecore#//LUA_Script">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//LUA_Script/content"/>
+    </genClasses>
+    <genClasses ecoreClass="Edje.ecore#//Collections">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edje.ecore#//Collections/groups"/>
+    </genClasses>
+    <genClasses ecoreClass="Edje.ecore#//Group">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Group/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Group/minx"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Group/miny"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edje.ecore#//Group/part"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edje.ecore#//Group/program"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edje.ecore#//Group/lua_script"/>
+    </genClasses>
+    <genClasses ecoreClass="Edje.ecore#//Part">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Part/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Part/minx"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Part/miny"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Part/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edje.ecore#//Part/descriptions"/>
+    </genClasses>
+    <genClasses ecoreClass="Edje.ecore#//Description">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edje.ecore#//Description/coordinates"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Description/red"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Description/green"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Description/blue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Description/alpha"/>
+    </genClasses>
+    <genClasses ecoreClass="Edje.ecore#//Coordinates">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Coordinates/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Coordinates/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Coordinates/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Coordinates/height"/>
+    </genClasses>
+    <genClasses ecoreClass="Edje.ecore#//Programs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edje.ecore#//Programs/program"/>
+    </genClasses>
+    <genClasses ecoreClass="Edje.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Program/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Program/signal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Program/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edje.ecore#//Program/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Edje.ecore#//Program/lua_script"/>
+    </genClasses>
+    <genClasses ecoreClass="Edje.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Action/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Edje.ecore#//Action/params"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
